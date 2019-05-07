@@ -41,12 +41,12 @@ podTemplate(label: 'jnlp-slave', cloud: 'kubernetes',
 							if ('prod' == "${ENV}") {
 								sh '''
 								# kustomize build deploy/overlays/prod | kubectl apply -f -
-								kubectl applt -k deploy/overlays/prod
+								kubectl apply -k deploy/overlays/prod
 								'''
 							}else {
 								sh '''
 								# kustomize build deploy/overlays/dev | kubectl apply -f -
-								kubectl applt -k deploy/overlays/dev
+								kubectl apply -k deploy/overlays/dev
 								'''
 							}	
 						}
